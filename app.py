@@ -354,64 +354,64 @@ if uploaded_file is not None:
         **Visualisasi 3D** menunjukkan intensitas piksel sebagai ketinggian, sehingga area terang muncul sebagai "puncak" dan area gelap sebagai "lembah".
         """)
     
-    with st.expander("Tahap 2: Hasil Sobel X (Gx)"):
-        col1, col2 = st.columns(2)
-        with col1:
-            st.image(sobel_x_norm, caption="Sobel X (Gx)", use_container_width=True)
-        with col2:
-            st.image(sobel_x_3d_img, caption="Visualisasi 3D Sobel X", use_container_width=True)
+    # with st.expander("Tahap 2: Hasil Sobel X (Gx)"):
+    #     col1, col2 = st.columns(2)
+    #     with col1:
+    #         st.image(sobel_x_norm, caption="Sobel X (Gx)", use_container_width=True)
+    #     with col2:
+    #         st.image(sobel_x_3d_img, caption="Visualisasi 3D Sobel X", use_container_width=True)
         
-        st.markdown("""
-        **Penjelasan:**
+    #     st.markdown("""
+    #     **Penjelasan:**
         
-        Sobel X (Gx) mendeteksi tepi vertikal dengan mengukur perubahan intensitas piksel secara horizontal.
-        Area terang menunjukkan perubahan intensitas yang kuat dari kiri ke kanan.
-        Area gelap menunjukkan perubahan intensitas yang kuat dari kanan ke kiri.
-        Area abu-abu (nilai mendekati nol) menunjukkan tidak ada perubahan intensitas horizontal yang signifikan.
+    #     Sobel X (Gx) mendeteksi tepi vertikal dengan mengukur perubahan intensitas piksel secara horizontal.
+    #     Area terang menunjukkan perubahan intensitas yang kuat dari kiri ke kanan.
+    #     Area gelap menunjukkan perubahan intensitas yang kuat dari kanan ke kiri.
+    #     Area abu-abu (nilai mendekati nol) menunjukkan tidak ada perubahan intensitas horizontal yang signifikan.
         
-        **Visualisasi 3D** menunjukkan gradien horizontal sebagai permukaan 3D, di mana puncak dan lembah menunjukkan perubahan intensitas yang kuat.
-        """)
+    #     **Visualisasi 3D** menunjukkan gradien horizontal sebagai permukaan 3D, di mana puncak dan lembah menunjukkan perubahan intensitas yang kuat.
+    #     """)
     
-    with st.expander("Tahap 3: Hasil Sobel Y (Gy)"):
-        col1, col2 = st.columns(2)
-        with col1:
-            st.image(sobel_y_norm, caption="Sobel Y (Gy)", use_container_width=True)
-        with col2:
-            st.image(sobel_y_3d_img, caption="Visualisasi 3D Sobel Y", use_container_width=True)
+    # with st.expander("Tahap 3: Hasil Sobel Y (Gy)"):
+    #     col1, col2 = st.columns(2)
+    #     with col1:
+    #         st.image(sobel_y_norm, caption="Sobel Y (Gy)", use_container_width=True)
+    #     with col2:
+    #         st.image(sobel_y_3d_img, caption="Visualisasi 3D Sobel Y", use_container_width=True)
         
-        st.markdown("""
-        **Penjelasan:**
+    #     st.markdown("""
+    #     **Penjelasan:**
         
-        Sobel Y (Gy) mendeteksi tepi horizontal dengan mengukur perubahan intensitas piksel secara vertikal.
-        Area terang menunjukkan perubahan intensitas yang kuat dari atas ke bawah.
-        Area gelap menunjukkan perubahan intensitas yang kuat dari bawah ke atas.
-        Area abu-abu (nilai mendekati nol) menunjukkan tidak ada perubahan intensitas vertikal yang signifikan.
+    #     Sobel Y (Gy) mendeteksi tepi horizontal dengan mengukur perubahan intensitas piksel secara vertikal.
+    #     Area terang menunjukkan perubahan intensitas yang kuat dari atas ke bawah.
+    #     Area gelap menunjukkan perubahan intensitas yang kuat dari bawah ke atas.
+    #     Area abu-abu (nilai mendekati nol) menunjukkan tidak ada perubahan intensitas vertikal yang signifikan.
         
-        **Visualisasi 3D** menunjukkan gradien vertikal sebagai permukaan 3D, di mana puncak dan lembah menunjukkan perubahan intensitas yang kuat.
-        """)
+    #     **Visualisasi 3D** menunjukkan gradien vertikal sebagai permukaan 3D, di mana puncak dan lembah menunjukkan perubahan intensitas yang kuat.
+    #     """)
     
-    with st.expander("Tahap 4: Magnitude dari Gx dan Gy"):
-        col1, col2 = st.columns(2)
-        with col1:
-            st.image(magnitude_norm, caption="Magnitude", use_container_width=True)
-        with col2:
-            st.image(magnitude_3d_img, caption="Visualisasi 3D Magnitude", use_container_width=True)
+    # with st.expander("Tahap 4: Magnitude dari Gx dan Gy"):
+    #     col1, col2 = st.columns(2)
+    #     with col1:
+    #         st.image(magnitude_norm, caption="Magnitude", use_container_width=True)
+    #     with col2:
+    #         st.image(magnitude_3d_img, caption="Visualisasi 3D Magnitude", use_container_width=True)
         
-        st.markdown("""
-        **Penjelasan:**
+    #     st.markdown("""
+    #     **Penjelasan:**
         
-        Magnitude dihitung dari Gx dan Gy menggunakan rumus: Magnitude = √(Gx² + Gy²)
+    #     Magnitude dihitung dari Gx dan Gy menggunakan rumus: Magnitude = √(Gx² + Gy²)
         
-        **Heatmap Magnitude:**
-        - Menunjukkan kekuatan tepi pada setiap piksel
-        - Area terang menunjukkan tepi yang kuat
-        - Area gelap menunjukkan tidak ada tepi
+    #     **Heatmap Magnitude:**
+    #     - Menunjukkan kekuatan tepi pada setiap piksel
+    #     - Area terang menunjukkan tepi yang kuat
+    #     - Area gelap menunjukkan tidak ada tepi
         
-        **Visualisasi 3D Magnitude:**
-        - Menunjukkan kekuatan tepi sebagai ketinggian dalam ruang 3D
-        - Puncak tinggi menunjukkan tepi yang kuat
-        - Area datar menunjukkan tidak ada tepi
-        """)
+    #     **Visualisasi 3D Magnitude:**
+    #     - Menunjukkan kekuatan tepi sebagai ketinggian dalam ruang 3D
+    #     - Puncak tinggi menunjukkan tepi yang kuat
+    #     - Area datar menunjukkan tidak ada tepi
+    #     """)
     
     # with st.expander("Tahap 5: Quiver Plot (Arah Gradien)"):
     #     st.image(quiver_img, caption="Quiver Plot (Magnitude + Arah)", use_container_width=True)
@@ -793,18 +793,3 @@ if uploaded_file is not None:
         
     #     Heatmap threshold lokal menunjukkan bagaimana nilai threshold bervariasi di seluruh gambar, menyesuaikan dengan kondisi lokal.
     #     """)
-
-else:
-    # Tampilkan gambar contoh jika tidak ada yang diunggah
-    st.info("Silakan unggah gambar untuk memulai visualisasi proses Sobel edge detection.")
-    
-    # Buat gambar contoh sederhana
-    example_img = np.zeros((300, 300), dtype=np.uint8)
-    # Buat bentuk kotak di tengah
-    example_img[100:200, 100:200] = 255
-    
-    st.image(example_img, caption="Contoh: Unggah gambar untuk melihat hasil yang sebenarnya", width=300)
-
-
-
-
