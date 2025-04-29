@@ -311,7 +311,7 @@ def visualize_ga_process(ga_history):
     return buf
 
 # Upload gambar
-uploaded_file = st.file_uploader("Unggah gambar", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Unggah gambar", type=["jpg", "jpeg", "png", "webp"])
 
 if uploaded_file is not None:
     # Baca gambar
