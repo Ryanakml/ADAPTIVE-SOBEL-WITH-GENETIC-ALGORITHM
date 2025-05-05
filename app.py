@@ -192,11 +192,14 @@ class GeneticAlgorithm:
     
     def selection(self, population, fitnesses):
         # Seleksi berdasarkan fitness (roulette wheel)
-        total_fitness = sum(fitnesses)
+        # Pastikan semua nilai fitness non-negatif
+        fitnesses_non_negative = [max(0, f) for f in fitnesses]
+        total_fitness = sum(fitnesses_non_negative)
+        
         if total_fitness == 0:
             return random.sample(population, 2)
         
-        selection_probs = [f/total_fitness for f in fitnesses]
+        selection_probs = [f/total_fitness for f in fitnesses_non_negative]
         selected_indices = np.random.choice(len(population), 2, p=selection_probs)
         return [population[i] for i in selected_indices]
     
