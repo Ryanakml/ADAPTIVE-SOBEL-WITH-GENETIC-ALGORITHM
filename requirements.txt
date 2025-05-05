@@ -1,6 +1,7 @@
 streamlit
-opencv-python-headless==4.8.0.76
+opencv-python-headless==4.7.0.72
 numpy
 matplotlib
 scikit-image
 Pillow
+pyarrow
